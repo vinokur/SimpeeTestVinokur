@@ -50,7 +50,7 @@ public class SimpleeContactTest extends TestNgTestBase {
 
     @Test(groups = {"contactPage", "positive"})
     public void testPositiveFillRequiredForms() {
-     //   simpleeContactPage.WaitContactPageIsLoaded();
+        simpleeContactPage.WaitContactPageIsLoaded();
         simpleeContactPage.FillFirstName(textFirstName);
         simpleeContactPage.FillLastName(textLastName);
         simpleeContactPage.FillEmail(textEmail);
@@ -59,7 +59,7 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsMessageSent(),
-                "Message not sent in positive test");
+                "Message didn't send in positive test");
     }
 
     @Test(groups = {"contactPage", "positive"})
@@ -75,7 +75,7 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsMessageSent(),
-                "Message not sent in positive test");
+                "Message didn't send in positive test");
     }
 
     @Test(groups = {"contactPage", "negative"})
@@ -91,9 +91,9 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsErrorPresent(),
-                "Message sent in positive test. textFirstNameNegative1 ");
+                "Message sent in negative test. textFirstNameNegative1 ");
         Assert.assertEquals("There was a problem with your submission. Errors have been highlighted below.",
-                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in positive test. textFirstNameNegative1");
+                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in negative test. textFirstNameNegative1");
     }
     @Test(groups = {"contactPage", "negative"})
     public void testNegativeFillRequiredFormsWrongLastName() {
@@ -108,9 +108,9 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsErrorPresent(),
-                "Message sent in positive test. textLastNamenegative1 ");
+                "Message sent in negative test. textLastNamenegative1 ");
         Assert.assertEquals("There was a problem with your submission. Errors have been highlighted below.",
-                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in positive test. textLastNamenegative1");
+                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in negative test. textLastNamenegative1");
     }
 
     @Test(groups = {"contactPage", "negative"})
@@ -126,9 +126,9 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsErrorPresent(),
-                "Message sent in positive test. textEmailNegative1 ");
+                "Message sent in negative test. textEmailNegative1 ");
         Assert.assertEquals("There was a problem with your submission. Errors have been highlighted below.",
-                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in positive test. textEmailNegative1");
+                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in negative test. textEmailNegative1");
     }
     @Test(groups = {"contactPage", "negative"})
     public void testNegativeFillRequiredFormsWrongPhone() {
@@ -143,9 +143,9 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsErrorPresent(),
-                "Message sent in positive test. textPhoneNumbNegative1 ");
+                "Message sent in negative test. textPhoneNumbNegative1 ");
         Assert.assertEquals("There was a problem with your submission. Errors have been highlighted below.",
-                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in positive test. textPhoneNumbNegative1");
+                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in negative test. textPhoneNumbNegative1");
     }
     @Test(groups = {"contactPage", "negative"})
     public void testNegativeFillRequiredFormsWrongCompany() {
@@ -160,9 +160,9 @@ public class SimpleeContactTest extends TestNgTestBase {
         simpleeContactPage.ClickbuttonSend();
         simpleeContactPage.WaitSentPageIsLoaded();
         Assert.assertTrue(simpleeContactPage.IsErrorPresent(),
-                "Message sent in positive test. textPhoneNumbNegative1 ");
+                "Message sent in negative test. textPhoneNumbNegative1 ");
         Assert.assertEquals("There was a problem with your submission. Errors have been highlighted below.",
-                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in positive test. textPhoneNumbNegative1");
+                simpleeContactPage.GetTextFromErrorMessage(), "Message sent in negative test. textPhoneNumbNegative1");
     }
 }
 
