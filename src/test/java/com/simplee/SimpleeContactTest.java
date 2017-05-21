@@ -1,7 +1,7 @@
 package com.simplee;
 
 import com.simplee.pages.SimpleeContactPage;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -37,9 +37,11 @@ public class SimpleeContactTest extends TestNgTestBase {
 
     @BeforeClass(alwaysRun = true)
     public void setup() {
-        System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
-        driver = new FirefoxDriver();
-        // or if we need Chrome use:   driver = new ChromeDriver();
+        driver = new ChromeDriver();
+        /** or if we need Mozilla:
+         System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\geckodriver.exe");
+         driver = new FirefoxDriver();
+         */
         simpleeContactPage = PageFactory.initElements(driver, SimpleeContactPage.class);
     }
 
